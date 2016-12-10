@@ -65,12 +65,14 @@ So far I’ve been through the configuration setup and a bit about the structure
 
 To start off with we had a core or default configuration thanks to the core/parent theme. To create each individual theme style sheet, we were able to include our core partial in each of the style.scss manifests. We could then add site-specific partials to add/overwrite any styles required for that market.
 
-	// Import the core partial containing all base site styles
-	@import “../core/core”;
+```sass
+// Import the core partial containing all base site styles
+@import “../core/core”;
 
-	// Import site-specific styles
-	@import “partials/campaigns/competition”;
-	@import “partials/campaigns/promotion-spring”;
+// Import site-specific styles
+@import “partials/campaigns/competition”;
+@import “partials/campaigns/promotion-spring”;
+```
 
 ### Overwriting configurations
 
