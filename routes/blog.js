@@ -4,26 +4,27 @@ const marked = require('marked');
 const fs = require('fs');
 const havePost = require('../lib/blog').havePost;
 
-/* GET home page. */
-router.get('/:postName', function(req, res) {
+/* GET single post. */
+router.get('/:postName', function(req, res, next) {
 	const post = req.params.postName;
 	let file = '';
 	let postPath = '';
 
 	havePost(post)
-		.then(function(post) {
+		.then((post) => {
 			file = fs.readFileSync(post, 'utf8');
 			res.render('blog', { title: 'Express', body: marked(file.toString()) });
 		})
-		.catch(function(blogError) {
-			const err = new Error('Not Found');
-			res.locals.message = err.message;
-			res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-			// render the error page
-			res.status(err.status || 500);
-			res.render('error');
+		.catch((blogError) => {
+			const err = new Error('Post not found');
+			err.status = 404;
+			next(err);
 		});
+});
+
+/* GET blog index page. */
+router.get('/', function(req, res, next) {
+	res.render('blog', { title: 'Blog post list', body: marked('This is _markdown_.') });
 });
 
 module.exports = router;
