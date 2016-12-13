@@ -1,4 +1,19 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<article role="main">
+	<header>
+		<h1>{{title}}</h1>
+		<p class="byline">
+			Posted on <time></time>, in 
+		</p>
+	</header>
 
-{{{body}}}
+	{{{body}}}
+</article>
+
+<nav class="page-nav clearfix">
+	<div class="align-left">
+		{{!--previous post link--}}
+	</div>
+	<div class="align-right">
+		{{!--next post link--}}
+	</div>
+</nav>
