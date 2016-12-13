@@ -27,7 +27,7 @@ var $ = require('gulp-load-plugins')(),
 	// Base Paths
 	basePaths = {
 		src: 'assets/',
-		dest: ''
+		dest: 'public/'
 	},
 
 	// Assets Folder Paths
