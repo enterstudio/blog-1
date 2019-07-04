@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "test": "snyk test"
+    "test": "snyk test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "app-root-path": "^2.0.1",
@@ -15,7 +17,8 @@
     "hbs": "~4.0.1",
     "marked": "^0.3.6",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "del": "^2.2.2",
@@ -46,7 +49,7 @@
     "jshint": "^2.9.4",
     "lazypipe": "^1.0.1",
     "nodemon": "^1.11.0",
-    "run-sequence": "^1.2.2",
-    "snyk": "^1.21.2"
-  }
+    "run-sequence": "^1.2.2"
+  },
+  "snyk": true
 }
