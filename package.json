@@ -10,7 +10,7 @@
     "app-root-path": "^2.0.1",
     "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.3.3",
+    "debug": "~3.1.0",
     "express": "~4.14.0",
     "hbs": "~4.0.1",
     "marked": "^0.3.6",
